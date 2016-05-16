@@ -1,33 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 
-// controllers
-import fetch from '../../api/controllers/fetch';
-import endpoints from '../../api/endpoints/ep';
-
 // components
-import Header from './Header';
-import Search from './Search'
+import Home from './Home';
 
 export default class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      title: 'Browse the Spotify Web API'
-    }
+  constructor(props) {
+    super(props);
+    // props left here incase access to route params is needed
   }
 
   searchChangeHandler(e) {
-    /*
-      useful
-      ______
-      q - required | must be one single token
-      type - required | can be multiple types separated by commas
-
-      strategy
-      ________
-
-    */
 
     let base_url = endpoints.search,
         q = 'drake',
@@ -45,12 +27,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Header title={this.state.title}>
-          <Search name="searchInput"
-                  type="text"
-                  placeHolder="Search albums, tracks or artists"
-                  changeHandler={this.searchChangeHandler.bind(this)} />
-        </Header>
+        {this.props.children}
       </div>
     );
   }

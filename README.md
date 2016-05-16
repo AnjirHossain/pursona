@@ -5,3 +5,7 @@ Usage:
 
 Assumes:
 [Webpack](https://webpack.github.io/) installed globally
+
+**Important**
+The `api/` is not a REST API, just units of abstraction housing all
+functionality concerning Spotify Web API interaction
