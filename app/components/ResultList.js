@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 // components
 import Result from './Result';
@@ -11,5 +11,8 @@ const ResultList = (props) => (
   </div>
 );
 
+ResultList.propTypes = {
+  items: PropTypes.array.isRequired
+}
 
 export default ResultList;

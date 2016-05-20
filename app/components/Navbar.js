@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 const Navbar = (props) => (
@@ -14,5 +14,10 @@ const Navbar = (props) => (
     }
   </nav>
 );
+
+Navbar.propTypes = {
+  links: PropTypes.array.isRequired,
+  defaultLink: PropTypes.object.isRequired
+}
 
 export default Navbar;

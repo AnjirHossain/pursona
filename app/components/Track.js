@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 // components
 import Media from './Media';
 import Title from './Title';
 import Label from './Label';
 
-const Track = ({ media, text }) => {
-  console.log('Track.js:9:: ', media, text);
-
+// add media retrieval for Track, here or (in parent)
+const Track = ({ text }) => {
   return (
     <div>
-      {/* <Media meta={media}></Media> re-introduce once we've discovered solution to get track art */}
       <Title text={text.title}></Title>
       <Label text={text.trackNumber}></Label>
       <Label text={text.duration}></Label>
@@ -18,6 +16,10 @@ const Track = ({ media, text }) => {
       {text.explicit ? <Label text='e'></Label>:''}
     </div>
   );
+}
+
+Track.propTypes = {
+  text: PropTypes.object.isRequired
 }
 
 export default Track;

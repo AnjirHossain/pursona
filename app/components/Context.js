@@ -24,7 +24,6 @@ export default class Context extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-
     let {
       q,
       type,
@@ -67,4 +66,8 @@ Context.contextTypes = {
   router: () => {
     return React.PropTypes.func.isRequired
   }
+}
+
+Context.propTypes = {
+  location: PropTypes.object.isRequired
 }

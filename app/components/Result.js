@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 // components
 import Album from './Album';
@@ -57,5 +57,10 @@ const Result = (props) => {
   );
 }
 
+Result.protoTypes = {
+  resultType: PropTypes.string.isRequired,
+  result: PropTypes.array.isRequired,
+  key: PropTypes.string.isRequired
+}
 
 export default Result;
